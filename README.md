@@ -2,7 +2,7 @@
 Réalisation des TD et TP de la filière informatique.
 
 # Languages
-JAVA, C
+Java, C, python
 
 # Auteurs
 UnExtraterrestres
@@ -16,3 +16,4 @@ outils : l'ensemble des outils nécessaires pour la réalisation des TP. Par exe
 documentation : l'ensemble des documentations qui peuvent nous aider. Les cours, les manuels de bonnes pratiques, nos notes personnelles...
 
 Pour le reste, il existe un fichier par language (ex: Java, C, python...), ou par groupe de languages (ex: pour les sites web qui utilisent CSS/HTML/PHP).
+  Dans ces dossiers chacun peut enregistrer son travail, suivant qui a fait on commit on saura qui l'a réalisé.
