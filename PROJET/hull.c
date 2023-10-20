@@ -31,6 +31,9 @@ struct vecset {
     size_t capacity;
 };
 
+typedef int (*comp_func_t)(const struct vec *p1, const struct vec *p2, const void *ctx){ //FCT DONNEE
+}
+
 void vecset_create(struct vecset *self){ //2.1
     self->data=(int *)(malloc(sizeof(int)*10));
     self->capacity=10;
@@ -51,8 +54,39 @@ void vecset_add(struct vecset *self, struct vec p){ //2.3
     vecset_push(self, p);
 }
 
-typedef int (*comp_func_t)(const struct vec *p1, const struct vec *p2, const void *ctx){ //2.4
+const struct vec *vecset_max(const struct vecset *self, comp_func_t func, const void *ctx){ //2.4
+    struct vec *vec_max=(struct vec *)(malloc(sizeof(struct vec *)));
+    vec_max=self->data[0];
+    for (int i=0; i<self->size-1; i++){
+        if (comp_func_t(data[i], data[i+1], ctx)<0){
+            vec_max=self->data[i+1];
+        }
+    }
+    return vec_max;
+}
 
+const struct vec *vecset_min(const struct vecset *self, comp_func_t func, const void *ctx){ //2.5
+    struct vec *vec_max=(struct vec *)(malloc(sizeof(struct vec *)));
+    vec_max=self->data[0];
+    for (int i=0; i<self->size-1; i++){
+        if (comp_func_t(data[i], data[i+1], ctx)>0){
+            vec_max=self->data[i+1];
+        }
+    }
+    return vec_max;
+}
+
+void vecset_sort(struct vecset *self, comp_func_t func, const void *ctx){ //2.6
+    struct vec *swap=(struct vec *)(malloc(sizeof(struct vec *)));
+    for (int i=0; i<self->size; i++){
+        for (int j=self->size-1; j>i; j--){
+            if (comp_func_t(data[j], data[j-1], ctx)<0){
+                swap=self->data[j];
+                self->data[j]=self->data[j-1];
+                self->data[j-1]=swap;
+            }
+        }
+    }
 }
 
 void vecset_push(struct vecset *self, struct vec p){ //2.7
