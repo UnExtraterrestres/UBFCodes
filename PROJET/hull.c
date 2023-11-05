@@ -212,7 +212,7 @@ void vecset_sort(struct vecset *self, comp_func_t func, const void *ctx) // O(nÂ
     * @result trie self suivant le fonction de comparaison func
     */
     
-    struct vec *swap = (struct vec *)(malloc(sizeof(struct vec *)));
+    struct vec *temp = (struct vec *)(malloc(sizeof(struct vec *)));
     for (size_t i = 0; i<self->size; ++i)
     {
         for (size_t j = self->size-1; j>i; --j)
@@ -221,12 +221,14 @@ void vecset_sort(struct vecset *self, comp_func_t func, const void *ctx) // O(nÂ
             if (func(data[j], data[j-1], ctx) < 0)
             {
                 
-                swap = self->data[j];
+                temp = self->data[j];
                 self->data[j] = self->data[j-1];
-                self->data[j-1] = swap;
+                self->data[j-1] = temp;
             }
         }
     }
+
+    free(temp);
 }
 
 
@@ -312,4 +314,47 @@ const struct vec *vecset_second(const struct vecset *self)
     }
     
     return NULL;
+}
+
+void jarvis_march(const struct vecset *in, struct vecset *out)
+{
+
+}
+
+
+void graham_scan(const struct vecset *in, struct vecset *out)
+{
+
+}
+
+void quikhull(const struct vecset *in, struct vecset *out)
+{
+
+}
+
+int main(int argc, char **argv)
+{
+
+	setbuf(stdout, NULL);
+
+	char buffer[BUFSIZE];
+	fgets(buffer, BUFSIZE, stdin);
+
+	size_t count = strtol(buffer, NULL, 10);
+
+	for (size_t i = 0; i<count; ++i)
+	{
+		struct vec p;
+
+		fgets(buffer, BUFSIZE, stdin);
+
+		char *endptr = buffer;
+		p.x = strtod(endptr, &endptr);
+		p.y = strtod(endptr, &endptr);
+
+		// faire le truc avec p lÃ 
+		// PS : dÃ©solÃ© pour la non chalance du commentaire au dessus XD
+	}
+
+	return 0;
 }
