@@ -60,15 +60,7 @@ bool is_left_turn(const struct vec *p1, const struct vec *p2, const struct vec *
 	* 	retourne faux ; sinon
 	*/
 	
-	double produit_vec = cross(p1, p2, p3);
-	
-	if (produit_vec > 0)
-	{
-	
-		return true;
-	}
-	
-	return false;
+	return cross(p1, p2, p3);
 }
 
 
