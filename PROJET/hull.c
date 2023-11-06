@@ -308,20 +308,112 @@ const struct vec *vecset_second(const struct vecset *self)
     return NULL;
 }
 
-void jarvis_march(const struct vecset *in, struct vecset *out)
-{
+void jarvis_march(const struct vecset *in, struct vecset *out) {
+    vecset_create(out);
 
+    assert(in->size >= 3);
+    
+    struct vec *F = &in->data[0];
+    for (size_t i = 1; i < in->size; i++) {
+        if (in->data[i].x < F->x || (in->data[i].x == F->x && in->data[i].y < F->y)) {
+            F = &in->data[i];
+        }
+    }
+
+    struct vec *C = F;
+
+    do {
+        vecset_push(out, *C);
+
+        struct vec *N = &in->data[0];
+        for (size_t i = 1; i < in->size; i++) {
+            if (C == N || (C != &in->data[i] && is_left_turn(C, N, &in->data[i]))) {
+                N = &in->data[i];
+            }
+        }
+
+        C = N;
+    } while (F != C);
 }
 
 
-void graham_scan(const struct vecset *in, struct vecset *out)
-{
+void graham_scan(const struct vecset *in, struct vecset *out) {
+    vecset_create(out);
 
+    assert(in->size >= 3);
+    
+    struct vec *B = &in->data[0];
+    for (size_t i = 1; i < in->size; i++) {
+        if (in->data[i].y < B->y || (in->data[i].y == B->y && in->data[i].x < B->x)) {
+            B = &in->data[i];
+        }
+    }
+
+    // Trier les points par angle par rapport à B
+    qsort(in->data, in->size, sizeof(struct vec), compare_points);
+
+    vecset_push(out, *B);
+    vecset_push(out, in->data[0]);
+
+    for (size_t i = 1; i < in->size; i++) {
+        while (out->size >= 2 && !is_left_turn(vecset_second(out), vecset_top(out), &in->data[i])) {
+            vecset_pop(out);
+        }
+        vecset_push(out, in->data[i]);
+    }
 }
 
-void quikhull(const struct vecset *in, struct vecset *out)
-{
+void quickhull(const struct vecset *in, struct vecset *out) {
+    vecset_create(&out);
 
+    assert(in->size >= 3);
+    
+    struct vec *A = &in->data[0];
+    struct vec *B = &in->data[0];
+
+    for (size_t i = 1; i < in->size; i++) {
+        if (in->data[i].x < A->x) {
+            A = &in->data[i];
+        } else if (in->data[i].x > B->x) {
+            B = &in->data[i];
+        }
+    }
+
+    struct vecset S1, S2;
+    vecset_create(&S1);
+    vecset_create(&S2);
+
+    for (size_t i = 0; i < in->size; i++) {
+        if (in->data[i] != *A && in->data[i] != *B) {
+            if (is_left_turn(A, B, &S->data[i])) {
+                vecset_push(&S1, S->data[i]);
+            } else {
+                vecset_push(&S2, in->data[i]);
+            }
+        }
+    }
+
+    struct vecset R1 = quickhull(&S1);
+    struct vecset R2 = quickhull(&S2);
+
+    vecset_push(&out, *A);
+
+    for (size_t i = 0; i < R1.size; i++) {
+        vecset_push(&out, R1.data[i]);
+    }
+
+    vecset_push(&out, *B);
+
+    for (size_t i = 0; i < R2.size; i++) {
+        vecset_push(&out, R2.data[i]);
+    }
+
+    vecset_destroy(&S1);
+    vecset_destroy(&S2);
+    vecset_destroy(&R1);
+    vecset_destroy(&R2);
+
+    return out;
 }
 
 int main(int argc, char **argv)
