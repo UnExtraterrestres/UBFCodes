@@ -60,7 +60,7 @@ bool is_left_turn(const struct vec *p1, const struct vec *p2, const struct vec *
 	* 	retourne faux ; sinon
 	*/
 	
-	return cross(p1, p2, p3);
+	return cross(p1, p2, p3) > 0;
 }
 
 
@@ -101,9 +101,9 @@ void vecset_create(struct vecset *self)
     * @result initialise self à vide
     */
     
-    self->data=(int *)(malloc(sizeof(int)*10));
-    self->capacity=10;
-    self->size=0;
+    self->capacity = 10;
+    self->size = 0;
+    self->data = malloc(sizeof(struct vec)*self->capacity);
 }
 
 
@@ -115,34 +115,21 @@ void vecset_destroy(struct vecset *self)
     * @result détruit self
     */
     
-    if (self!=NULL)
+    if (self != NULL)
     {
         
         if (self->size!=0)
         {
             
-          int *trash = self->data;
-          self->data=NULL;
+          struct vec *trash = self->data;
+          self->data = NULL;
           free(trash);
         }
     }
 }
 
 
-void vecset_add(struct vecset *self, struct vec p)
-{
-    /**
-    * Ajouter un point à un nuage de point
-    * @param self une structure vecset ; le nuage de point
-    * @param p une structure vec ; le point
-    * @result empile p à self
-    */
-    
-    vecset_push(self, p);
-}
-
-
-const struct vec *vecset_max(const struct vecset *self, comp_func_t func, const void *ctx)
+const struct vec *vecset_max(const struct vecset *self, typedef int func, const void *ctx)
 {
     /**
     * Recherche du plus grand point dans un nuage de point
@@ -152,7 +139,7 @@ const struct vec *vecset_max(const struct vecset *self, comp_func_t func, const 
     * @result renvois le plus grand point parmis self
     */
     
-    struct vec *vec_max = (struct vec *)(malloc(sizeof(struct vec *)));
+    struct vec *vec_max = malloc(sizeof(struct vec));
     vec_max = self->data[0];
     
     for (size_t i = 0; i<self->size-1; ++i)
@@ -169,7 +156,7 @@ const struct vec *vecset_max(const struct vecset *self, comp_func_t func, const 
 }
 
 
-const struct vec *vecset_min(const struct vecset *self, comp_func_t func, const void *ctx)
+const struct vec *vecset_min(const struct vecset *self, typedef int func, const void *ctx)
 {
     /**
     * Recherche du plus petit point dans un nuage de point
@@ -179,7 +166,7 @@ const struct vec *vecset_min(const struct vecset *self, comp_func_t func, const 
     * @result renvois le plus petit point parmis self
     */
     
-    struct vec *vec_max = (struct vec *)(malloc(sizeof(struct vec *)));
+    struct vec *vec_max = malloc(sizeof(struct vec));
     vec_max = self->data[0];
     
     for (size_t i = 0; i<self->size-1; ++i)
@@ -194,7 +181,7 @@ const struct vec *vecset_min(const struct vecset *self, comp_func_t func, const 
 }
 
 
-void vecset_sort(struct vecset *self, comp_func_t func, const void *ctx) // O(n²) MINIMUM => A CHANGER !!!!!!!
+void vecset_sort(struct vecset *self, typedef func, const void *ctx) // O(n²) MINIMUM => A CHANGER !!!!!!!
 {
     /**
     * Tri d'un nuage de point
@@ -204,7 +191,7 @@ void vecset_sort(struct vecset *self, comp_func_t func, const void *ctx) // O(n�
     * @result trie self suivant le fonction de comparaison func
     */
     
-    struct vec *temp = (struct vec *)(malloc(sizeof(struct vec *)));
+    struct vec *temp = malloc(sizeof(struct vec));
     for (size_t i = 0; i<self->size; ++i)
     {
         for (size_t j = self->size-1; j>i; --j)
@@ -238,7 +225,7 @@ void vecset_push(struct vecset *self, struct vec p)
     {
         
         self->capacity = self->capacity*2;
-        int *data_add=(int *)(calloc(self->capacity, (sizeof(int *))));
+        int *data_add = calloc(self->capacity, (sizeof(int)));
 
         while(i < self->size)
         {
@@ -257,6 +244,19 @@ void vecset_push(struct vecset *self, struct vec p)
         self->data[self->size] = p;
         self->size += 1;
     }
+}
+
+
+void vecset_add(struct vecset *self, struct vec *p)
+{
+    /**
+    * Ajouter un point à un nuage de point
+    * @param self une structure vecset ; le nuage de point
+    * @param p une structure vec ; le point
+    * @result empile p à self
+    */
+    
+    vecset_push(self, p);
 }
 
 
@@ -367,7 +367,7 @@ void graham_scan(const struct vecset *in, struct vecset *out)
 
 void quickhull(const struct vecset *in, struct vecset *out)
 {
-    vecset_create(&out);
+    vecset_create(out);
 
     assert(in->size >= 3);
     
@@ -376,9 +376,9 @@ void quickhull(const struct vecset *in, struct vecset *out)
 
     for (size_t i = 1; i < in->size; i++) {
         if (in->data[i].x < A->x) {
-            A = &in->data[i];
+            A = in->data[i];
         } else if (in->data[i].x > B->x) {
-            B = &in->data[i];
+            B = in->data[i];
         }
     }
 
@@ -387,28 +387,28 @@ void quickhull(const struct vecset *in, struct vecset *out)
     vecset_create(&S2);
 
     for (size_t i = 0; i < in->size; i++) {
-        if (in->data[i] != *A && in->data[i] != *B) {
-            if (is_left_turn(A, B, &S->data[i])) {
-                vecset_push(&S1, S->data[i]);
+        if (in->data[i] != A && in->data[i] != B) {
+            if (is_left_turn(A, B, in->data[i])) {
+                vecset_push(&S1, in->data[i]);
             } else {
                 vecset_push(&S2, in->data[i]);
             }
         }
     }
 
-    struct vecset R1 = quickhull(&S1);
-    struct vecset R2 = quickhull(&S2);
+    struct vecset R1 = quickhull(&S1, out);
+    struct vecset R2 = quickhull(&S2, out);
 
-    vecset_push(&out, *A);
+    vecset_push(out, *A);
 
     for (size_t i = 0; i < R1.size; i++) {
-        vecset_push(&out, R1.data[i]);
+        vecset_push(out, R1.data[i]);
     }
 
-    vecset_push(&out, *B);
+    vecset_push(out, *B);
 
     for (size_t i = 0; i < R2.size; i++) {
-        vecset_push(&out, R2.data[i]);
+        vecset_push(out, R2.data[i]);
     }
 
     vecset_destroy(&S1);
