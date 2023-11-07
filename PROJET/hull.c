@@ -420,26 +420,33 @@ void quickhull(const struct vecset *in, struct vecset *out)
 int main(int argc, char **argv)
 {
 
-	setbuf(stdout, NULL);
+	/* STRUCTURE POUR LA GEOMETRIE */
+    // struct vec
+    // dot
+    // cross
+    // is_left_turn
 
-	char buffer[BUFSIZE];
-	fgets(buffer, BUFSIZE, stdin);
+    /* ENSEMBLE DE POINTS */
+    // vecset
+    // vecset_create
+    // vecset_destroy
+    // vecset_add
+    // type def comp
+    // vecset_max
+    // vecset_min
+    // vecset_sort
+    // vecset_push
+    // vecset_pop
+    // vecset_top
+    // vecset_second
 
-	size_t count = strtol(buffer, NULL, 10);
+    /* MARCHE DE JARVIS */
 
-	for (size_t i = 0; i<count; ++i)
-	{
-		struct vec p;
+    /* PARCOURS DE GRAHAM */
 
-		fgets(buffer, BUFSIZE, stdin);
+    /* ENVELOPPE RAPIDE */
 
-		char *endptr = buffer;
-		p.x = strtod(endptr, &endptr);
-		p.y = strtod(endptr, &endptr);
-
-		// faire le truc avec p là
-		// PS : désolé pour la non chalance du commentaire au dessus XD
-	}
+    /* PILOTE */
 
 	return 0;
 }
