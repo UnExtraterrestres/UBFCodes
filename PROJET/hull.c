@@ -308,7 +308,8 @@ const struct vec *vecset_second(const struct vecset *self)
     return NULL;
 }
 
-void jarvis_march(const struct vecset *in, struct vecset *out) {
+void jarvis_march(const struct vecset *in, struct vecset *out)
+{
     vecset_create(out);
 
     assert(in->size >= 3);
@@ -337,7 +338,8 @@ void jarvis_march(const struct vecset *in, struct vecset *out) {
 }
 
 
-void graham_scan(const struct vecset *in, struct vecset *out) {
+void graham_scan(const struct vecset *in, struct vecset *out)
+{
     vecset_create(out);
 
     assert(in->size >= 3);
@@ -363,7 +365,8 @@ void graham_scan(const struct vecset *in, struct vecset *out) {
     }
 }
 
-void quickhull(const struct vecset *in, struct vecset *out) {
+void quickhull(const struct vecset *in, struct vecset *out)
+{
     vecset_create(&out);
 
     assert(in->size >= 3);
@@ -412,8 +415,6 @@ void quickhull(const struct vecset *in, struct vecset *out) {
     vecset_destroy(&S2);
     vecset_destroy(&R1);
     vecset_destroy(&R2);
-
-    return out;
 }
 
 int main(int argc, char **argv)
