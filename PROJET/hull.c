@@ -27,7 +27,7 @@ double dot(const struct vec *v1, const struct vec *v2)
 	* @result un réél ; égal à ce produit scalaire
 	*/
 	
-	return (v1->x*v2->x)*(v1->y*v2->y);
+	return (v1->x*v2->x)+(v1->y*v2->y);
 }
 
 
@@ -63,6 +63,8 @@ bool is_left_turn(const struct vec *p1, const struct vec *p2, const struct vec *
 	
 	return cross(p1, p2, p3) > 0;
 }
+
+
 
 
 struct vecset
@@ -430,14 +432,43 @@ int main(int argc, char **argv)
 
 	/* STRUCTURE POUR LA GEOMETRIE */
     // struct vec
+    struct vec *v0 = malloc(sizeof(struct vec));
+    struct vec *v1 = malloc(sizeof(struct vec));
+    struct vec *v2 = malloc(sizeof(struct vec));
+    
+    v0->x = 0.0;
+    v0->y = 0.0;
+    v1->x = 1.0;
+    v1->y = 1.0;
+    v2->x = -10.0;
+    v2->y = 36.0;
+    
+    printf("v0 = %lf %lf\n", v0->x, v0->y);
+    printf("v1 = %lf %lf\n", v1->x, v1->y);
+    printf("v2 = %lf %lf\n", v2->x, v2->y);
+    
     // dot
+    double d = dot(v2, v1);
+    printf("dot 21 : %lf\n", d);
+    
     // cross
+    double c = cross(v0, v1 ,v2);
+    printf("cross 012 : %lf\n", c);
     // is_left_turn
-
+    bool lt = is_left_turn(v0, v1, v2);
+    printf("ilt = %d\n", lt);
+	
     /* ENSEMBLE DE POINTS */
     // vecset
+    struct vecset *nuage = malloc(sizeof(struct vecset));
+    
     // vecset_create
+    vecset_create(nuage);
+    
     // vecset_destroy
+    // voir free
+    
+    
     // vecset_add
     // type def comp
     // vecset_max
@@ -455,6 +486,11 @@ int main(int argc, char **argv)
     /* ENVELOPPE RAPIDE */
 
     /* PILOTE */
-
+	
+	free(v0);
+	free(v1);
+	free(v2);
+	vecset_destroy(nuage);
+	
 	return 0;
 }
