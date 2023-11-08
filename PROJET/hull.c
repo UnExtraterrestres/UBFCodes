@@ -92,21 +92,9 @@ typedef int (*comp_func_t)(const struct vec *p1, const struct vec *p2, const voi
     */
 
 
-//Ces comp_func_t sont théoriques, je suis pas sûr quels comparaisons sont utilisées
-comp_func_t func_farright(const struct vec *p1, const struct vec *p2, const void *ctx){
-
-}
-
-comp_func_t func_farleft(const struct vec *p1, const struct vec *p2, const void *ctx){
-
-}
-
-comp_func_t func_fartop(const struct vec *p1, const struct vec *p2, const void *ctx){
-
-}
-
-comp_func_t func_fardown(const struct vec *p1, const struct vec *p2, const void *ctx){
-
+//Faut la faire
+comp_func_t *classic_comp(const struct vec *p1, const struct vec *p2, const void *ctx){
+    return (comp_func_t *)1;
 }
 
 
@@ -146,7 +134,7 @@ void vecset_destroy(struct vecset *self)
 }
 
 
-const struct vec *vecset_max(const struct vecset *self, typedef int func, const void *ctx)
+const struct vec *vecset_max(const struct vecset *self, comp_func_t func, const void *ctx)
 {
     /**
     * Recherche du plus grand point dans un nuage de point
@@ -155,14 +143,14 @@ const struct vec *vecset_max(const struct vecset *self, typedef int func, const 
     * @param ctx un contexte ;
     * @result renvois le plus grand point parmis self
     */
-    
+
     struct vec *vec_max = malloc(sizeof(struct vec));
     vec_max = &self->data[0];
     
     for (size_t i = 0; i<self->size-1; ++i)
     {
         
-        if (func(self->data[i], self->data[i+1], ctx) < 0)
+        if (func(&self->data[i], &self->data[i+1], ctx) < 0)
         {
         
             vec_max = &self->data[i+1];
@@ -173,7 +161,7 @@ const struct vec *vecset_max(const struct vecset *self, typedef int func, const 
 }
 
 
-const struct vec *vecset_min(const struct vecset *self, typedef int func, const void *ctx)
+const struct vec *vecset_min(const struct vecset *self, comp_func_t func, const void *ctx)
 {
     /**
     * Recherche du plus petit point dans un nuage de point
@@ -198,7 +186,7 @@ const struct vec *vecset_min(const struct vecset *self, typedef int func, const 
 }
 
 
-void vecset_sort(struct vecset *self, typedef func, const void *ctx) // O(n²) MINIMUM => A CHANGER !!!!!!!
+void vecset_sort(struct vecset *self, comp_func_t func, const void *ctx) // O(n²) MINIMUM => A CHANGER !!!!!!!
 {
     /**
     * Tri d'un nuage de point
@@ -207,7 +195,7 @@ void vecset_sort(struct vecset *self, typedef func, const void *ctx) // O(n²) M
     * @param ctx un contexte ;
     * @result trie self suivant le fonction de comparaison func
     */
-    
+
     struct vec *temp = malloc(sizeof(struct vec));
     for (size_t i = 0; i<self->size; ++i)
     {
@@ -219,7 +207,7 @@ void vecset_sort(struct vecset *self, typedef func, const void *ctx) // O(n²) M
                 
                 temp = &self->data[j];
                 self->data[j] = self->data[j-1];
-                &self->data[j-1] = temp;
+                self->data[j-1] = *temp;
             }
         }
     }
@@ -242,7 +230,7 @@ void vecset_push(struct vecset *self, struct vec p)
     {
         
         self->capacity = self->capacity*2;
-        int *data_add = calloc(self->capacity, (sizeof(int)));
+        struct vec *data_add = calloc(self->capacity, (sizeof(int)));
 
         while(i < self->size)
         {
@@ -264,7 +252,7 @@ void vecset_push(struct vecset *self, struct vec p)
 }
 
 
-void vecset_add(struct vecset *self, struct vec *p)
+void vecset_add(struct vecset *self, struct vec p)
 {
     /**
     * Ajouter un point à un nuage de point
