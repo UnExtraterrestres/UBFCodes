@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <stdbool.h>
+#include <assert.h>
 
 struct vec
 {
@@ -79,8 +80,7 @@ struct vecset
 };
 
 
-typedef int (*comp_func_t)(const struct vec *p1, const struct vec *p2, const void *ctx)
-{
+typedef int (*comp_func_t)(const struct vec *p1, const struct vec *p2, const void *ctx);
     /**
     * Comparaison de deux points
     * @param p1 une structure vec ; le premier point
@@ -90,6 +90,23 @@ typedef int (*comp_func_t)(const struct vec *p1, const struct vec *p2, const voi
     *     un entier positif si p1 est plus grand que p2,
     *     0 ; sinon
     */
+
+
+//Ces comp_func_t sont théoriques, je suis pas sûr quels comparaisons sont utilisées
+comp_func_t func_farright(const struct vec *p1, const struct vec *p2, const void *ctx){
+
+}
+
+comp_func_t func_farleft(const struct vec *p1, const struct vec *p2, const void *ctx){
+
+}
+
+comp_func_t func_fartop(const struct vec *p1, const struct vec *p2, const void *ctx){
+
+}
+
+comp_func_t func_fardown(const struct vec *p1, const struct vec *p2, const void *ctx){
+
 }
 
 
@@ -140,15 +157,15 @@ const struct vec *vecset_max(const struct vecset *self, typedef int func, const 
     */
     
     struct vec *vec_max = malloc(sizeof(struct vec));
-    vec_max = self->data[0];
+    vec_max = &self->data[0];
     
     for (size_t i = 0; i<self->size-1; ++i)
     {
         
-        if (func(data[i], data[i+1], ctx) < 0)
+        if (func(self->data[i], self->data[i+1], ctx) < 0)
         {
         
-            vec_max = self->data[i+1];
+            vec_max = &self->data[i+1];
         }
     }
     
@@ -167,13 +184,13 @@ const struct vec *vecset_min(const struct vecset *self, typedef int func, const 
     */
     
     struct vec *vec_max = malloc(sizeof(struct vec));
-    vec_max = self->data[0];
+    vec_max = &self->data[0];
     
     for (size_t i = 0; i<self->size-1; ++i)
     {
-        if (func(data[i], data[i+1], ctx) > 0)
+        if (func(&self->data[i], &self->data[i+1], ctx) > 0)
         {
-            vec_max = self->data[i+1];
+            vec_max = &self->data[i+1];
         }
     }
     
@@ -197,12 +214,12 @@ void vecset_sort(struct vecset *self, typedef func, const void *ctx) // O(n²) M
         for (size_t j = self->size-1; j>i; --j)
         {
             
-            if (func(data[j], data[j-1], ctx) < 0)
+            if (func(&self->data[j], &self->data[j-1], ctx) < 0)
             {
                 
-                temp = self->data[j];
+                temp = &self->data[j];
                 self->data[j] = self->data[j-1];
-                self->data[j-1] = temp;
+                &self->data[j-1] = temp;
             }
         }
     }
@@ -283,7 +300,7 @@ const struct vec *vecset_top(const struct vecset *self)
     if (self->size > 0)
     {
         
-        return data[0];
+        return &self->data[0];
     }
     
     return NULL;
@@ -302,7 +319,7 @@ const struct vec *vecset_second(const struct vecset *self)
     if (self->size > 1)
     {
         
-        return data[1];
+        return &self->data[1];
     }
     
     return NULL;
@@ -376,19 +393,22 @@ void quickhull(const struct vecset *in, struct vecset *out)
 
     for (size_t i = 1; i < in->size; i++) {
         if (in->data[i].x < A->x) {
-            A = in->data[i];
+            A = &in->data[i];
         } else if (in->data[i].x > B->x) {
-            B = in->data[i];
+            B = &in->data[i];
         }
     }
 
     struct vecset S1, S2;
     vecset_create(&S1);
     vecset_create(&S2);
+    struct vecset R1, R2;
+    vecset_create(&R1);
+    vecset_create(&R2);
 
     for (size_t i = 0; i < in->size; i++) {
-        if (in->data[i] != A && in->data[i] != B) {
-            if (is_left_turn(A, B, in->data[i])) {
+        if (&in->data[i] != A && &in->data[i] != B) {
+            if (is_left_turn(A, B, &in->data[i])) {
                 vecset_push(&S1, in->data[i]);
             } else {
                 vecset_push(&S2, in->data[i]);
@@ -396,8 +416,8 @@ void quickhull(const struct vecset *in, struct vecset *out)
         }
     }
 
-    struct vecset R1 = quickhull(&S1, out);
-    struct vecset R2 = quickhull(&S2, out);
+    quickhull(&S1, out);
+    quickhull(&S2, out);
 
     vecset_push(out, *A);
 
