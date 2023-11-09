@@ -221,6 +221,111 @@ void afficher_vecset(const struct vecset *self)
 }
 
 
+double fabs(double x)
+{
+	/**
+	* Valeur absolue d'un réél
+	*@param x un réél
+	*@result la valeur absolue de x
+	*/
+	
+	return x < 0 ? -x : x;
+}
+
+
+void find_hull(const struct vecset *in, struct vecset *out, const struct vec *X, const struct vec *Y) {
+    if (in->size == 0) {
+        return;
+    }
+
+    const struct vec *M = &in->data[0];
+    double maxDistance = 0;
+
+	// point le plus loin de (AB)
+    for (size_t i = 1; i < in->size; i++) {
+        double distance = fabs(cross(X, Y, &in->data[i]));
+        if (distance > maxDistance) {
+            maxDistance = distance;
+            M = &in->data[i];
+        }
+    }
+
+	// création des sous-nuages
+    struct vecset S1, S2;
+    vecset_create(&S1);
+    vecset_create(&S2);
+
+    for (size_t i = 0; i < in->size; i++) {
+        if (&in->data[i] != M) {
+            if (is_left_turn(X, M, &in->data[i])) {
+                vecset_push(&S1, in->data[i]);
+            }
+            if (is_left_turn(M, Y, &in->data[i])) {
+                vecset_push(&S2, in->data[i]);
+            }
+        }
+    }
+
+	// appels récursifs
+    find_hull(&S1, out, X, M);
+    vecset_push(out, *M);
+    find_hull(&S2, out, M, Y);
+
+    vecset_destroy(&S1);
+    vecset_destroy(&S2);
+}
+
+
+void quickhull(const struct vecset *in, struct vecset *out) {
+    if (in->size < 3) {
+        // points inssufisants
+        return;
+    }
+
+	// points aux extremes gauche et droite
+    const struct vec *A = &in->data[0];
+    const struct vec *B = &in->data[0];
+
+    for (size_t i = 1; i < in->size; i++) {
+        if (in->data[i].x < A->x) {
+            A = &in->data[i];
+        } else if (in->data[i].x > B->x) {
+            B = &in->data[i];
+        }
+    }
+
+	// création des sous nuages
+    struct vecset S1, S2;
+    vecset_create(&S1);
+    vecset_create(&S2);
+
+    for (size_t i = 0; i < in->size; i++) {
+        if (&in->data[i] != A && &in->data[i] != B) {
+            if (is_left_turn(A, B, &in->data[i])) {
+                vecset_push(&S1, in->data[i]);
+            } else {
+                vecset_push(&S2, in->data[i]);
+            }
+        }
+    }
+
+	// appel recursif sur les sous nuages
+    find_hull(&S1, out, A, B);
+    find_hull(&S2, out, B, A);
+
+    vecset_push(out, *A);
+
+    for (size_t i = 0; i < out->size; i++) {
+        vecset_push(out, out->data[i]);
+    }
+
+    vecset_push(out, *B);
+
+    vecset_destroy(&S1);
+    vecset_destroy(&S2);
+}
+
+
 int main()
 {
 	setbuf(stdout, NULL); // avoid buffering in the output
@@ -274,4 +379,3 @@ int main()
 	
 	return 0;
 }
-
