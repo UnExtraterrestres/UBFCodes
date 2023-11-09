@@ -3,6 +3,7 @@
 #include <stdbool.h>
 #include <assert.h>
 
+#define BUFSIZE 3301
 
 struct vec
 {
@@ -68,6 +69,7 @@ bool is_left_turn(const struct vec *p1, const struct vec *p2, const struct vec *
 
 
 
+
 struct vecset
 {
     /**
@@ -95,6 +97,12 @@ void vecset_create(struct vecset *self)
     self->capacity = 10;
     self->size = 0;
     self->data = malloc(sizeof(struct vec)*self->capacity);
+}
+
+vecset_create_from(struct vecset *self, struct vec *data, size_t size)
+{
+	
+	
 }
 
 
