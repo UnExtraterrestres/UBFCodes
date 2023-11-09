@@ -99,10 +99,28 @@ void vecset_create(struct vecset *self)
     self->data = malloc(sizeof(struct vec)*self->capacity);
 }
 
-vecset_create_from(struct vecset *self, struct vec *data, size_t size)
+
+void vecset_create_from(struct vecset *self, const struct vec *data, size_t size)
 {
 	
+	/**
+	*Creation d'un nuage de point
+	* à partir d'un point spécifié
+	*@param self une structure vecset
+	*@param data une structure vec
+	*@param size un entier
+	*@result initialise self avec size fois data 
+	*/
 	
+	self->size = size;
+	self->capacity = self->size*2;
+	self->data = malloc(sizeof(struct vec)*self->capacity);
+	
+	for (size_t i = 0; i<size; ++i)
+	{
+		
+		self->data[i] = data[i];
+	}
 }
 
 
@@ -189,16 +207,41 @@ void vecset_pop(struct vecset *self)
 }
 
 
+void afficher_vecset(const struct vecset *self)
+{
+	
+	for (size_t i = 0; i<self->size; ++i)
+	{
+		
+		printf("x : %lf | y : %lf\n", self->data[i].x, self->data[i].y);
+	}
+	
+	printf("Capacity = %ld\n", self->capacity);
+	printf("Size = %ld\n", self->size);
+}
+
 void quickhull(const struct vecset *in, struct vecset *out)
 {
-
+	
+	afficher_vecset(in);	
+	
+	if (in->size < 3)
+	{
+		for (size_t i = 0; i<in->size; ++i)
+		{
+			// faire func_cmp pour choisir le point à ajouter entre S1 et S2
+			vecset_push(out, in->data[i]);
+		}
+		return;
+	}
+    // assert(in->size >= 3 && "moins de 3 points");
+    
     vecset_create(out);
-
-    assert(in->size >= 3);
     
     struct vec *A = &in->data[0];
     struct vec *B = &in->data[0];
 
+	// cherche les points les plus à gauche et à droite
     for (size_t i = 1; i < in->size; i++) {
         if (in->data[i].x < A->x) {
             A = &in->data[i];
@@ -206,14 +249,13 @@ void quickhull(const struct vecset *in, struct vecset *out)
             B = &in->data[i];
         }
     }
-
+	
+	// declaration des sous-nuages
     struct vecset S1, S2;
     vecset_create(&S1);
     vecset_create(&S2);
-    struct vecset R1, R2;
-    vecset_create(&R1);
-    vecset_create(&R2);
 
+	// création des deux sous-nuages
     for (size_t i = 0; i < in->size; i++) {
         if (&in->data[i] != A && &in->data[i] != B) {
             if (is_left_turn(A, B, &in->data[i])) {
@@ -223,12 +265,17 @@ void quickhull(const struct vecset *in, struct vecset *out)
             }
         }
     }
-
+	
+	// appel récursif sur les deux sous-nuages
     quickhull(&S1, out);
     quickhull(&S2, out);
 
     vecset_push(out, *A);
-
+	
+	struct vecset R1, R2;
+    vecset_create(&R1);
+    vecset_create(&R2);
+    
     for (size_t i = 0; i < R1.size; i++) {
         vecset_push(out, R1.data[i]);
     }
@@ -238,11 +285,13 @@ void quickhull(const struct vecset *in, struct vecset *out)
     for (size_t i = 0; i < R2.size; i++) {
         vecset_push(out, R2.data[i]);
     }
-
-    vecset_destroy(&S1);
-    vecset_destroy(&S2);
+	
+	free(A); A = NULL;
+	free(B); B = NULL;
     vecset_destroy(&R1);
     vecset_destroy(&R2);
+    vecset_destroy(&S1);
+    vecset_destroy(&S2);
 }
 
 
@@ -281,19 +330,21 @@ int main()
 
 	// faire les enveloppes
 	quickhull(tab, tab_enveloppe);
+	afficher_vecset(tab_enveloppe);
 
 	// envoyer le résultat sur la sortie standard
 	printf("%ld\n", tab_enveloppe->size);
 	for (size_t i = 0; i < tab_enveloppe->size; i++)
 	{
-		printf("%f %f\n", tab_enveloppe->data[i].x, tab_enveloppe->data[i].y);
+		printf("%f %f\n", tab_enveloppe->data[i].x, 
+			tab_enveloppe->data[i].y);
 	}
 	printf("\n");
 
 	vecset_destroy(tab);
 	vecset_destroy(tab_enveloppe);
-	free (tab);
-	free (tab_enveloppe);
+	free(tab); tab = NULL;
+	free(tab_enveloppe); tab_enveloppe = NULL;
 	
 	return 0;
 }
