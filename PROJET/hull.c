@@ -95,7 +95,8 @@ typedef int (*comp_func_t)(const struct vec *p1, const struct vec *p2, const voi
 
 
 //Faut la faire
-comp_func_t *classic_comp(const struct vec *p1, const struct vec *p2, const void *ctx){
+comp_func_t *classic_comp(const struct vec *p1, const struct vec *p2, const void *ctx)
+{
     return (comp_func_t *)1;
 }
 
