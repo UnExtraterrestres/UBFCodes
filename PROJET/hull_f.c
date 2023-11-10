@@ -1,3 +1,16 @@
+    /** Projet de Willfrid Foucon et de Lucas Dupalut
+	*
+    *
+    * Nous sommes arrivés à des warning, S1, S2 may be used uninitialized
+    * En restant concentrés sur quickhull
+    * Nous avions déjà des problèmes de mémoires, et comme nous n'arrivions pas à les résoudre
+    * Nous nous sommes penchés sur quickhull pour limiter le nombre de tests des sous-fonctions implèmentés
+    * Et le test produit une erreur de segmentation (testés avec des main() de camarades)
+    * Cependant nous pensons être très proches de faire fonctionner quickhull
+    * Nous ferons déjà un point entre nous deux pour comprendre nos erreurs, quelles soient techniques ou organnisationelles
+	* Pour ne pas les reproduire par la suite
+    * Nous vous demandrons probablement de l'aide si nous ne comprenons pas par nous-mêmes
+    */ 
 #include <stdlib.h>
 #include <stdio.h>
 #include <stdbool.h>
@@ -212,6 +225,9 @@ void vecset_pop(struct vecset *self)
 void afficher_vecset(const struct vecset *self)
 {
 	
+    /**
+    * SIMPLES AFFICHAGES POUR LES TESTS
+    */
 	for (size_t i = 0; i<self->size; ++i)
 	{
 		
@@ -316,7 +332,7 @@ double fabs(double x)
     *@result la valeur absolue de x
     */
     
-    return x < 0 ? -x : x;
+    return x < 0 ? -x : x; // merci pour l'astuce du CM <3
 }
 
 
@@ -343,7 +359,10 @@ struct vec *fur_point(const struct vecset *self,
 	
 	/**
 	* Calcul du point le plus éloigné 
-	*@param 
+	*@param
+    *@param
+    *@param
+    *@result renvoie le point parmi self, qui a la plus grande dist_from_line
 	*/
 	
 	struct vec *res = NULL;
@@ -378,7 +397,8 @@ void quickhull_recursif(const struct vecset *in,
 	*@param out une structure vecset
 	*@result quickhull récursivement
 	*/
-		
+	
+    /*
 	if (in->size == 0)
 	{
 		return;
@@ -405,6 +425,7 @@ void quickhull_recursif(const struct vecset *in,
 	
 	vecset_destroy(S1);
 	vecset_destroy(S2);
+    */
 }
 
 
@@ -431,7 +452,7 @@ void quickhull(const struct vecset *in, struct vecset *out)
 	*	et le point le plus éloiné de (minmax) : M
 	*/
 	
-	
+	/*
 	assert(in->size >= 3 && "nuage de points, in : trop petit");
 	
 	// selectionner les points min ; A, et max ; B
@@ -457,60 +478,12 @@ void quickhull(const struct vecset *in, struct vecset *out)
 	
 	vecset_destroy(S1);
 	vecset_destroy(S2);
+    */
 }
 
 
-int main()
+int main(int argc, char **argv)
 {
-	setbuf(stdout, NULL); // avoid buffering in the output
 
-	char buffer[BUFSIZE];
-	fgets(buffer, BUFSIZE, stdin);
-
-	size_t count = strtol(buffer, NULL, 10);
-
-	struct vecset* tab = malloc (sizeof(struct vecset));
-	struct vec* temptab = malloc (sizeof(struct vec)*count);
-	struct vecset* tab_enveloppe = malloc (sizeof(struct vecset));
-
-	for (size_t i = 0; i < count; i++)
-	{
-		struct vec p;
-		fgets(buffer, BUFSIZE, stdin);
-		char *endptr = buffer;
-		p.x = strtod(endptr, &endptr);
-		p.y = strtod(endptr, &endptr);
-		temptab[i] = p;
-	}
-
-	// enregistrer l'entrée dans le vecset tab
-	vecset_create_from(tab, temptab, count);
-	free (temptab);
-
-	/*printf("%ld\n", tab->size);
-	for (size_t i = 0; i < tab->size; i++){
-	printf("%f %f\n", tab->data[i].x, tab->data[i].y);
-	}
-	printf("\n");*/
-
-	// faire les enveloppes
-	quickhull(tab, tab_enveloppe);
-	afficher_vecset(tab_enveloppe);
-
-	// envoyer le résultat sur la sortie standard
-	printf("%ld\n", tab_enveloppe->size);
-	for (size_t i = 0; i < tab_enveloppe->size; i++)
-	{
-		printf("%f %f\n", tab_enveloppe->data[i].x, 
-			tab_enveloppe->data[i].y);
-	}
-	printf("\n");
-
-	vecset_destroy(tab);
-	vecset_destroy(tab_enveloppe);
-	free(tab); tab = NULL;
-	free(tab_enveloppe); tab_enveloppe = NULL;
-	
-	return 0;
+    return 0;
 }
-
