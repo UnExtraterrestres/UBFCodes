@@ -1,0 +1,129 @@
+#### REQUÊTES BASIQUES ####
+
+~~ Ajout ~~
+	d'album
+INSERT INTO ALBUM (IDAlbum, NomAlbum)
+VALUES ((SELECT MAX(IDAlbum)+1 FROM ALBUM), 'Nom de l'album');
+
+	d'individu
+INSERT INTO INDIVIDU (IDInd, IDPere, IDMere, nomInd, PrenomInd)
+VALUES ((SELECT MAX(IDInd)+1 FROM INDIVIDU), 'ID du père', 'ID de la mère', 'Nom de l'individu', 'Prénom de l'individu');
+
+	d'evenement
+INSERT INTO EVENEMENT (IDEvenement, LibelleEvenement, DateEvenement)
+VALUES ((SELECT MAX(IDEvenement)+1 FROM EVENEMENT), 'Libellé de l'événement', 'Date de l'événement');
+
+	des photos		(demande)
+INSERT INTO PHOTO (IDPhoto, IDAlbum, NumPage, IDEvenement)
+VALUES ((SELECT MAX(IDPhoto)+1 FROM PHOTO), 'ID de l'album', 'Numéro de page', 'ID de l'événement');
+
+	apparait
+INSERT INTO APPARAIT (IDPhoto, IDInd)
+VALUES ('ID de la photo', 'ID de l'individu');
+
+
+		
+~~ Suppression ~~
+	d'album
+DELETE FROM ALBUM
+WHERE IDAlbum = 'ID de l'album';
+
+	d'individu
+DELETE FROM INDIVIDU
+WHERE IDInd = 'ID de l'individu';
+
+	d'evenement
+DELETE FROM EVENEMENT
+WHERE IDEvenement = 'ID de l'événement';
+
+	des photos
+DELETE FROM PHOTO
+WHERE IDPhoto = 'ID de la photo';
+
+	apparait
+DELETE FROM APPARAIT
+WHERE IDPhoto = 'ID de la photo' AND IDInd = 'ID de l'individu';
+
+
+
+~~ Modification ~~
+	d'album
+UPDATE ALBUM
+SET NomAlbum = 'Nouveau nom de l'album'
+WHERE IDAlbum = 'ID de l'album';
+
+	d'individu
+UPDATE INDIVIDU
+SET IDPere = 'Nouvel ID du père', IDMere = 'Nouvel ID de la mère', nomInd = 'Nouveau nom de l'individu', PrenomInd = 'Nouveau prénom de l'individu'
+WHERE IDInd = 'ID de l'individu';
+
+	d'evenement
+UPDATE EVENEMENT
+SET LibelleEvenement = 'Nouveau libellé de l'événement', DateEvenement = 'Nouvelle date de l'événement'
+WHERE IDEvenement = 'ID de l'événement';
+
+	des photos
+UPDATE PHOTO
+SET IDAlbum = 'Nouvel ID de l'album', NumPage = 'Nouveau numéro de page', IDEvenement = 'Nouvel ID de l'événement'
+WHERE IDPhoto = 'ID de la photo';
+
+	apparait
+Non nécessaire
+
+
+~~ Recherche ~~
+	d'album		(demande)
+SELECT *
+FROM ALBUM
+WHERE NomAlbum = 'Nom de l'album';
+
+	d'individu
+SELECT *
+FROM INDIVIDU
+WHERE nomInd = 'Nom de l'individu';
+
+	d'evenement
+SELECT *
+FROM EVENEMENT
+WHERE LibelleEvenement = 'Libellé de l'événement';
+
+	des photos		(demande)
+SELECT *
+FROM PHOTO
+WHERE IDAlbum = 'ID de l'album';
+
+	apparait
+SELECT *
+FROM APPARAIT
+WHERE IDInd = 'ID de l'individu';
+
+
+
+#### AUTRES REQUÊTES ####
+~~Recherche des photos de famille~~
+// c'est à dire les photos de chaque personne d'un même arbre généalogique
+SELECT DISTINCT P.IDPhoto, P.IDAlbum, P.NumPage
+FROM PHOTO AS P
+INNER JOIN APPARAIT AS AP1 ON P.IDPhoto = AP1.IDPhoto
+INNER JOIN INDIVIDU AS I1 ON AP1.IDInd = I1.IDInd
+INNER JOIN INDIVIDU AS I2 ON (I1.IDPere = I2.IDPere OR I1.IDMere = I2.IDMere)
+INNER JOIN APPARAIT AS AP2 ON I2.IDInd = AP2.IDInd
+WHERE I1.nomInd = 'Nom de l'individu' AND I1.PrenomInd = 'Prénom de l'individu'
+
+
+~~Recherche des albums et pages ou sont rangées les photos ou une personne donnée apparaît~~
+SELECT
+	NomAlbum, NumPage
+FROM
+	ALBUM NATURAL JOIN PHOTO
+WHERE
+	IDPhoto IN
+(
+SELECT 
+	IDPhoto
+FROM 
+	APPARAIT NATURAL JOIN INDIVIDU
+WHERE
+	nomInd=nomSaisie
+	AND PrenomInd=prenomSaisie
+)

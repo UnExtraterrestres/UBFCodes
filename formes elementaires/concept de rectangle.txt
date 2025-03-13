@@ -1,0 +1,30 @@
+1.1__________________________________
+
+Def:
+	quadrilatère qui possède trois angles droits
+
+Propriétés:
+	ses côtés opposés sont parallèles et égaux en longueur
+	ses deux diagonales se coupent en leur milieu
+	-> ce milieu est un centre de symétrie du rectangle
+	ses diagonales sont égales en longueur
+	il possède deux axes de symétrie, qui sont les médiatrices de ses côtés
+	il existe un cercle circonscrit au rectangle
+
+Mesures:
+	Périmètre : 2(longueur+hauteur)
+	Aire : longueur*hauteur
+	Diagonale : sqrt(longueur²+hauteur²)
+
+Rectangles Remarquables
+	Carré : rectangle où les côtés sont tous égaux en longueur
+	Rectangle d'or : rectangle dont le rapport entre la longueur et la hauteur est égal au nombre d'or
+	Format : ex A4 format standard
+
+1.2__________________________________
+
+Les longueur et hauteur.
+
+1.3__________________________________
+
+Les calculs de périmètre, aire et diagonale.
