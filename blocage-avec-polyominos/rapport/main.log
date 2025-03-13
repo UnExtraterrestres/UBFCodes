@@ -1,0 +1,501 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.5) (preloaded format=pdflatex 2023.5.17)  20 MAY 2023 16:14
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**./main.tex
+(main.tex
+LaTeX2e <2022-11-01> patch level 1
+L3 programming layer <2023-05-11>
+(C:\Users\wfouc\AppData\Local\Programs\MiKTeX\tex/latex/base\report.cls
+Document Class: report 2022/07/02 v1.4n Standard LaTeX document class
+(C:\Users\wfouc\AppData\Local\Programs\MiKTeX\tex/latex/base\size10.clo
+File: size10.clo 2022/07/02 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count185
+\c@chapter=\count186
+\c@section=\count187
+\c@subsection=\count188
+\c@subsubsection=\count189
+\c@paragraph=\count190
+\c@subparagraph=\count191
+\c@figure=\count192
+\c@table=\count193
+\abovecaptionskip=\skip48
+\belowcaptionskip=\skip49
+\bibindent=\dimen140
+)
+(C:\Users\wfouc\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+
+(C:\Users\wfouc\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks16
+)
+(C:\Users\wfouc\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.sty
+Package: graphics 2022/03/10 v1.4e Standard LaTeX Graphics (DPC,SPQR)
+
+(C:\Users\wfouc\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.sty
+Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
+)
+(C:\Users\wfouc\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\graphics.c
+fg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 107.
+
+(C:\Users\wfouc\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.def
+File: pdftex.def 2022/09/22 v1.2b Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen141
+\Gin@req@width=\dimen142
+)
+(C:\Users\wfouc\AppData\Local\Programs\MiKTeX\tex/latex/fancyhdr\fancyhdr.sty
+Package: fancyhdr 2022/11/09 v4.1 Extensive control of page headers and footers
+
+\f@nch@headwidth=\skip50
+\f@nch@O@elh=\skip51
+\f@nch@O@erh=\skip52
+\f@nch@O@olh=\skip53
+\f@nch@O@orh=\skip54
+\f@nch@O@elf=\skip55
+\f@nch@O@erf=\skip56
+\f@nch@O@olf=\skip57
+\f@nch@O@orf=\skip58
+)
+(C:\Users\wfouc\AppData\Local\Programs\MiKTeX\tex/latex/graphics\color.sty
+Package: color 2022/01/06 v1.3d Standard LaTeX Color (DPC)
+
+(C:\Users\wfouc\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package color Info: Driver file: pdftex.def on input line 149.
+(C:\Users\wfouc\AppData\Local\Programs\MiKTeX\tex/latex/graphics\mathcolor.ltx)
+) (C:\Users\wfouc\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.sty
+Package: babel 2023/05/11 v3.89 The Babel package
+\babel@savecnt=\count194
+\U@D=\dimen143
+\l@unhyphenated=\language79
+
+(C:\Users\wfouc\AppData\Local\Programs\MiKTeX\tex/generic/babel\txtbabel.def)
+\bbl@readstream=\read2
+\bbl@dirlevel=\count195
+
+*************************************
+* Local config file bblopts.cfg used
+*
+(C:\Users\wfouc\AppData\Local\Programs\MiKTeX\tex/latex/arabi\bblopts.cfg
+File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of
+ babel
+)
+(C:\Users\wfouc\AppData\Local\Programs\MiKTeX\tex/generic/babel-french\french.l
+df
+Language: french 2023/03/08 v3.5q French support from the babel system
+Package babel Info: Hyphen rules for 'acadian' set to \l@french
+(babel)             (\language22). Reported on input line 91.
+Package babel Info: Hyphen rules for 'canadien' set to \l@french
+(babel)             (\language22). Reported on input line 92.
+\FB@nonchar=\count196
+Package babel Info: Making : an active character on input line 395.
+Package babel Info: Making ; an active character on input line 396.
+Package babel Info: Making ! an active character on input line 397.
+Package babel Info: Making ? an active character on input line 398.
+\FBguill@level=\count197
+\FBold@everypar=\toks17
+\FB@Mht=\dimen144
+\mc@charclass=\count198
+\mc@charfam=\count199
+\mc@charslot=\count266
+\std@mcc=\count267
+\dec@mcc=\count268
+\FB@parskip=\dimen145
+\listindentFB=\dimen146
+\descindentFB=\dimen147
+\labelindentFB=\dimen148
+\labelwidthFB=\dimen149
+\leftmarginFB=\dimen150
+\parindentFFN=\dimen151
+\FBfnindent=\dimen152
+))
+(C:\Users\wfouc\AppData\Local\Programs\MiKTeX\tex/generic/babel/locale/fr\babel
+-french.tex
+Package babel Info: Importing font and identification data for french
+(babel)             from babel-fr.ini. Reported on input line 11.
+)
+(C:\Users\wfouc\AppData\Local\Programs\MiKTeX\tex/latex/carlisle\scalefnt.sty)
+(C:\Users\wfouc\AppData\Local\Programs\MiKTeX\tex/latex/titlesec\titlesec.sty
+Package: titlesec 2021/07/05 v2.14 Sectioning titles
+\ttl@box=\box51
+\beforetitleunit=\skip59
+\aftertitleunit=\skip60
+\ttl@plus=\dimen153
+\ttl@minus=\dimen154
+\ttl@toksa=\toks18
+\titlewidth=\dimen155
+\titlewidthlast=\dimen156
+\titlewidthfirst=\dimen157
+)
+(C:\Users\wfouc\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdf
+tex.def
+File: l3backend-pdftex.def 2023-04-19 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count269
+\l__pdf_internal_box=\box52
+) (main.aux (page_de_garde.aux) (dedicaces.aux) (remerciements.aux)
+(introduction.aux) (analyse_technique.aux) (organisation.aux)
+(description_des_classes.aux) (fonctions_implementees.aux) (conclusion.aux))
+\openout1 = `main.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+
+(C:\Users\wfouc\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mk
+ii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count270
+\scratchdimen=\dimen158
+\scratchbox=\box53
+\nofMPsegments=\count271
+\nofMParguments=\count272
+\everyMPshowfont=\toks19
+\MPscratchCnt=\count273
+\MPscratchDim=\dimen159
+\MPnumerator=\count274
+\makeMPintoPDFobject=\count275
+\everyMPtoPDFconversion=\toks20
+)
+(C:\Users\wfouc\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-b
+ase.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+
+(C:\Users\wfouc\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.c
+fg
+File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
+))
+LaTeX Info: Redefining \degres on input line 20.
+LaTeX Info: Redefining \up on input line 20.
+
+
+Package french.ldf Warning: OT1 encoding should not be used for French.
+(french.ldf)                Add \usepackage[T1]{fontenc} to the preamble
+(french.ldf)                of your document; reported on input line 20.
+
+\openout2 = `page_de_garde.aux'.
+
+(page_de_garde.tex
+<ufrst.jpg, id=1, 98.55pt x 39.42pt>
+File: ufrst.jpg Graphic file (type jpg)
+<use ufrst.jpg>
+Package pdftex.def Info: ufrst.jpg  used on input line 2.
+(pdftex.def)             Requested size: 197.09952pt x 78.83978pt.
+) [1{C:/Users/wfouc/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}
+
+
+ <./ufrst.jpg>]
+\openout2 = `dedicaces.aux'.
+
+ (dedicaces.tex [2
+
+
+
+])
+\openout2 = `remerciements.aux'.
+
+ (remerciements.tex
+Underfull \hbox (badness 10000) in paragraph at lines 1--1
+|\OT1/cmr/bx/n/24.88 Remerciements|
+ []
+
+) [3
+
+
+
+
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 29--29
+|\OT1/cmr/bx/n/24.88 Table des mati^^Reres|
+ []
+
+(main.toc
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 5.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 5.
+ [4
+
+
+
+])
+\tf@toc=\write3
+\openout3 = `main.toc'.
+
+ [5]
+\openout2 = `introduction.aux'.
+
+ (introduction.tex
+Underfull \hbox (badness 10000) in paragraph at lines 1--1
+|\OT1/cmr/bx/n/24.88 Introduction|
+ []
+
+) [6
+
+
+]
+\openout2 = `analyse_technique.aux'.
+
+ (analyse_technique.tex
+Chapitre 1.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1--1
+|\OT1/cmr/bx/n/20.74 Chapitre 1|
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1--1
+\OT1/cmr/bx/n/24.88 pro-pos^^Se|
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3--3
+|[]\OT1/cmr/bx/n/14.4 Pr^^Sesentation ra-pide|
+ []
+
+[7
+
+
+
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 8--8
+|[]\OT1/cmr/bx/n/14.4 D^^Sefinitions|
+ []
+
+) [8]
+\openout2 = `organisation.aux'.
+
+ (organisation.tex
+Underfull \hbox (badness 10000) in paragraph at lines 1--1
+|\OT1/cmr/bx/n/24.88 Organisation|
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6--6
+|[]\OT1/cmr/bx/n/14.4 Ressources hu-maines|
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 8--8
+|[]\OT1/cmr/bx/n/12 Fr^^Sequence de tra-vail|
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 14--14
+|[]\OT1/cmr/bx/n/12 Communication pour le tra-vail|
+ []
+
+[9
+
+
+
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 19--19
+|[]\OT1/cmr/bx/n/14.4 Ressources lo-gi-cielles|
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 21--21
+|[]\OT1/cmr/bx/n/12 Pour le pro-jet|
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 25--25
+|[][]\OT1/cmr/bx/n/12 Ecriture du code|
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 29--29
+|[][]\OT1/cmr/bx/n/12 Ecriture du rap-port|
+ []
+
+) [10]
+\openout2 = `description_des_classes.aux'.
+
+ (description_des_classes.tex
+Chapitre 2.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1--1
+|\OT1/cmr/bx/n/20.74 Chapitre 2|
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1--1
+|\OT1/cmr/bx/n/24.88 Description des classes|
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3--3
+|[]\OT1/cmr/bx/n/14.4 Main|
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 7--7
+|[]\OT1/cmr/bx/n/14.4 Jeu|
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 11--11
+|[]\OT1/cmr/bx/n/14.4 Scene|
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 15--15
+|[]\OT1/cmr/bx/n/14.4 Menu|
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 19--19
+|[]\OT1/cmr/bx/n/14.4 Niveau|
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--23
+|[]\OT1/cmr/bx/n/14.4 Plateau|
+ []
+
+[11
+
+
+
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 27--27
+|[]\OT1/cmr/bx/n/14.4 Cellule|
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 31--31
+|[]\OT1/cmr/bx/n/14.4 Joueur|
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 35--35
+|[]\OT1/cmr/bx/n/14.4 Humain|
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 39--39
+|[]\OT1/cmr/bx/n/14.4 Machine|
+ []
+
+[12]
+Underfull \hbox (badness 10000) in paragraph at lines 44--44
+|[]\OT1/cmr/bx/n/14.4 Polyomino|
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 48--48
+|[]\OT1/cmr/bx/n/14.4 Domino, Trio-mino, Te-tro-mino|
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 52--52
+|[]\OT1/cmr/bx/n/14.4 Saisies|
+ []
+
+) [13]
+\openout2 = `fonctions_implementees.aux'.
+
+ (fonctions_implementees.tex
+Chapitre 3.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1--1
+|\OT1/cmr/bx/n/20.74 Chapitre 3|
+ []
+
+
+Overfull \hbox (11.6076pt too wide) in paragraph at lines 1--1
+|\OT1/cmr/bx/n/24.88 Fonctionnalit^^Ses impl^^Sement^^Sees|
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3--3
+|[]\OT1/cmr/bx/n/14.4 Initialisation|
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 7--7
+|[]\OT1/cmr/bx/n/14.4 Visuels|
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 12--12
+|[]\OT1/cmr/bx/n/14.4 Placement d'un po-ly-omino|
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 16--16
+|[]\OT1/cmr/bx/n/14.4 Fin de par-tie|
+ []
+
+[14
+
+
+
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 21--21
+|[]\OT1/cmr/bx/n/14.4 Strat^^Segie de la ma-chine|
+ []
+
+) [15]
+\openout2 = `conclusion.aux'.
+
+ (conclusion.tex
+Underfull \hbox (badness 10000) in paragraph at lines 1--1
+|\OT1/cmr/bx/n/24.88 Conclusion|
+ []
+
+) [16
+
+
+
+
+] (main.aux (page_de_garde.aux) (dedicaces.aux) (remerciements.aux)
+(introduction.aux) (analyse_technique.aux) (organisation.aux)
+(description_des_classes.aux) (fonctions_implementees.aux) (conclusion.aux)) ) 
+Here is how much of TeX's memory you used:
+ 3997 strings out of 476361
+ 72403 string characters out of 5788046
+ 1861993 words of memory out of 5000000
+ 24339 multiletter control sequences out of 15000+600000
+ 516313 words of font info for 45 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 57i,12n,62p,778b,438s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<
+C:/Users/wfouc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmb
+x10.pfb><C:/Users/wfouc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfon
+ts/cm/cmbx12.pfb><C:/Users/wfouc/AppData/Local/Programs/MiKTeX/fonts/type1/publ
+ic/amsfonts/cm/cmcsc10.pfb><C:/Users/wfouc/AppData/Local/Programs/MiKTeX/fonts/
+type1/public/amsfonts/cm/cmr10.pfb><C:/Users/wfouc/AppData/Local/Programs/MiKTe
+X/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/wfouc/AppData/Local/Progra
+ms/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb>
+Output written on main.pdf (16 pages, 132149 bytes).
+PDF statistics:
+ 85 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+

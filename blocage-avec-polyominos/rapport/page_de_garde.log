@@ -1,0 +1,381 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.5) (preloaded format=pdflatex 2023.5.17)  20 MAY 2023 15:52
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**./page_de_garde.tex
+(page_de_garde.tex
+LaTeX2e <2022-11-01> patch level 1
+L3 programming layer <2023-05-11>
+! Undefined control sequence.
+l.2 \includegraphics
+                    [width=0.4\textwidth scale=2]{ufrst.jpg}\par
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.2 \includegraphics[
+                     width=0.4\textwidth scale=2]{ufrst.jpg}\par
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Missing character: There is no [ in font nullfont!
+Missing character: There is no w in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no 4 in font nullfont!
+! Missing number, treated as zero.
+<to be read again> 
+                   s
+l.2 \includegraphics[width=0.4\textwidth s
+                                          cale=2]{ufrst.jpg}\par
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   s
+l.2 \includegraphics[width=0.4\textwidth sc
+                                           ale=2]{ufrst.jpg}\par
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+Missing character: There is no s in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 2 in font nullfont!
+Missing character: There is no ] in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no f in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no j in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no g in font nullfont!
+! Undefined control sequence.
+l.4 {\scshape\Large
+                    Établissement: Université de Franche-Comté, faculté ...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.4 {\scshape\Large É
+                      tablissement: Université de Franche-Comté, faculté ...
+
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Overfull \hbox (75.76619pt too wide) in paragraph at lines 4--4
+ [][]\OT1/cmr/m/sc/10 Etablissement: 
+ []
+
+
+Overfull \hbox (21.07207pt too wide) in paragraph at lines 4--4
+ \OT1/cmr/m/sc/10 Uni- 
+ []
+
+
+Overfull \hbox (21.511pt too wide) in paragraph at lines 4--4
+ \OT1/cmr/m/sc/10 ver- 
+ []
+
+
+Overfull \hbox (19.08878pt too wide) in paragraph at lines 4--4
+ \OT1/cmr/m/sc/10 sit[]e 
+ []
+
+
+Overfull \hbox (11.82217pt too wide) in paragraph at lines 4--4
+ \OT1/cmr/m/sc/10 de 
+ []
+
+
+Overfull \hbox (46.81364pt too wide) in paragraph at lines 4--4
+ \OT1/cmr/m/sc/10 Franche- 
+ []
+
+
+Overfull \hbox (36.36641pt too wide) in paragraph at lines 4--4
+ \OT1/cmr/m/sc/10 Comt[]e, 
+ []
+
+
+Overfull \hbox (20.06656pt too wide) in paragraph at lines 4--4
+ \OT1/cmr/m/sc/10 fac- 
+ []
+
+
+Overfull \hbox (22.08875pt too wide) in paragraph at lines 4--4
+ \OT1/cmr/m/sc/10 ult[]e 
+ []
+
+
+Overfull \hbox (11.82217pt too wide) in paragraph at lines 4--4
+ \OT1/cmr/m/sc/10 de 
+ []
+
+
+Overfull \hbox (17.28877pt too wide) in paragraph at lines 4--4
+ \OT1/cmr/m/sc/10 sci- 
+ []
+
+
+Overfull \hbox (27.77763pt too wide) in paragraph at lines 4--4
+ \OT1/cmr/m/sc/10 ences 
+ []
+
+
+Overfull \hbox (11.48882pt too wide) in paragraph at lines 4--4
+ \OT1/cmr/m/sc/10 et 
+ []
+
+
+Overfull \hbox (27.31094pt too wide) in paragraph at lines 4--4
+ \OT1/cmr/m/sc/10 tech- 
+ []
+
+
+Overfull \hbox (31.79987pt too wide) in paragraph at lines 4--4
+ \OT1/cmr/m/sc/10 niques 
+ []
+
+! Undefined control sequence.
+l.6 {\huge
+          \bfseries Rapport - L1ST – APOO – Projet TP 2023 \par}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.6 {\huge\bfseries R
+                     apport - L1ST – APOO – Projet TP 2023 \par}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Overfull \hbox (42.2706pt too wide) in paragraph at lines 6--6
+ []\OT1/cmr/bx/n/10 Rapport 
+ []
+
+
+Overfull \hbox (3.83331pt too wide) in paragraph at lines 6--6
+ \OT1/cmr/bx/n/10 - 
+ []
+
+
+Overfull \hbox (27.0554pt too wide) in paragraph at lines 6--6
+ \OT1/cmr/bx/n/10 L1ST 
+ []
+
+
+Overfull \hbox (5.74997pt too wide) in paragraph at lines 6--6
+ \OT1/cmr/bx/n/10 { 
+ []
+
+
+Overfull \hbox (33.83315pt too wide) in paragraph at lines 6--6
+ \OT1/cmr/bx/n/10 APOO 
+ []
+
+
+Overfull \hbox (5.74997pt too wide) in paragraph at lines 6--6
+ \OT1/cmr/bx/n/10 { 
+ []
+
+
+Overfull \hbox (22.18045pt too wide) in paragraph at lines 6--6
+ \OT1/cmr/bx/n/10 Pro- 
+ []
+
+
+Overfull \hbox (13.25688pt too wide) in paragraph at lines 6--6
+ \OT1/cmr/bx/n/10 jet 
+ []
+
+
+Overfull \hbox (15.86102pt too wide) in paragraph at lines 6--6
+ \OT1/cmr/bx/n/10 TP 
+ []
+
+
+Overfull \hbox (22.99988pt too wide) in paragraph at lines 6--6
+ \OT1/cmr/bx/n/10 2023 
+ []
+
+! Undefined control sequence.
+l.8 {\scshape\Large
+                    Encadrement: Dorine Tabary \par}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.8 {\scshape\Large E
+                     ncadrement: Dorine Tabary \par}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Overfull \hbox (71.72182pt too wide) in paragraph at lines 8--8
+ []\OT1/cmr/m/sc/10 Encadrement: 
+ []
+
+
+Overfull \hbox (35.40259pt too wide) in paragraph at lines 8--8
+ \OT1/cmr/m/sc/10 Dorine 
+ []
+
+
+Overfull \hbox (36.54149pt too wide) in paragraph at lines 8--8
+ \OT1/cmr/m/sc/10 Tabary 
+ []
+
+! Undefined control sequence.
+l.10 {\Large
+            \itshape Jeu de blocage avec polyominos \par}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.10 {\Large\itshape J
+                      eu de blocage avec polyominos \par}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Overfull \hbox (15.21655pt too wide) in paragraph at lines 10--10
+ []\OT1/cmr/m/it/10 Jeu 
+ []
+
+
+Overfull \hbox (9.71104pt too wide) in paragraph at lines 10--10
+ \OT1/cmr/m/it/10 de 
+ []
+
+
+Overfull \hbox (30.1553pt too wide) in paragraph at lines 10--10
+ \OT1/cmr/m/it/10 blocage 
+ []
+
+
+Overfull \hbox (18.39984pt too wide) in paragraph at lines 10--10
+ \OT1/cmr/m/it/10 avec 
+ []
+
+
+Overfull \hbox (20.69984pt too wide) in paragraph at lines 10--10
+ \OT1/cmr/m/it/10 poly- 
+ []
+
+
+Overfull \hbox (19.93321pt too wide) in paragraph at lines 10--10
+ \OT1/cmr/m/it/10 omi- 
+ []
+
+
+Overfull \hbox (14.82214pt too wide) in paragraph at lines 10--10
+ \OT1/cmr/m/it/10 nos 
+ []
+
+! Undefined control sequence.
+l.13 {\large
+             Mai 2023\par}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.13 {\large M
+              ai 2023\par}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Missing character: There is no M in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no 2 in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 2 in font nullfont!
+Missing character: There is no 3 in font nullfont!
+)
+! Emergency stop.
+<*> ./page_de_garde.tex
+                       
+*** (job aborted, no legal \end found)
+
+ 
+Here is how much of TeX's memory you used:
+ 28 strings out of 476361
+ 548 string characters out of 5788046
+ 1851993 words of memory out of 5000000
+ 20534 multiletter control sequences out of 15000+600000
+ 513242 words of font info for 35 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 14i,1n,12p,155b,58s stack positions out of 10000i,1000n,20000p,200000b,200000s
+!  ==> Fatal error occurred, no output PDF file produced!

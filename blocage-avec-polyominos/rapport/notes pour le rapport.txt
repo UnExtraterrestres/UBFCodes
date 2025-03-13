@@ -1,0 +1,41 @@
+Il est important de manière générale d'inclure ce qui est potentiellement utile à l'enseignant.
+
+CORPS / PARTIES
+	
+	page de garde
+		établissement, type de document, titre du document, encadreurs, date
+
+	dedicaces
+		pour faire plaisir à ceux pour qui ce travail compte
+
+	remerciements
+		remercier les responsables de l'organisme, les encadreurs et toute personne qui a apporté une contribution au travail
+
+	table des matières
+
+	introduction
+		entrée en matière qui situe le travail, ses contraintes de temps et de moyen, son objectif, la façon de procéder
+		
+	analyse technique du sujet proposé (cahier des charges)
+		présentation rapide (du jeu)
+		Interprétation des consignes (justifier)
+		Description des conditions de placement et de fin de partie
+		Description de la stratégie implémentée pour l'IA
+
+	solution techniques proposé et justifications des choix
+		Fonctionnalitées implémentées
+		Les différentes classes et leur utilité
+		Choix d'initialisation des paramètres
+
+		Fonctionnalitées supplémentaires
+
+	conclusion
+		reprend les objectifs, résume et donne des perspectives
+
+	bibliographie
+		pertinence et rigueur dans les références
+
+	annexes
+		titre
+		annexe
+		description

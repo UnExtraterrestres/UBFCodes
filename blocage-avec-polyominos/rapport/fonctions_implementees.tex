@@ -1,0 +1,24 @@
+\chapter{Fonctionnalités implémentées}
+
+\section{Initialisation}
+
+La majeure partie de l'initialisation se passe dans le menu. C'est à dire au début du lancement du jeu. Le menu principal propose de lancer la partie de quitter le programme ou donner quelques informations comme les règles de jeu. Lorsque l'utilisateur lance une nouvelle partie un nouveau menu apparait, en fait dans cette seconde partie on va définir le plateau en premier, puis les joueurs, qu'ils soient humain ou machine. Donc différents plateau sont proposés, puis l'utilisateur saisi le nombre de joueurs humains.
+
+\section{Visuels}
+
+Il y a plusieurs affichages différents : celui des menus, du plateau du jeu de polyominos d'un joueur.
+Dans un premier temps il a été décidé de développer un affichage très simple, des numéros pour les lignes, des lettres de A à Z pour les colonnes, un point représente une cellule libre, sinon il y a un caractère en fonction du joueur, par défaut 'X'. Le même style a été conservé pour l'affichage des polyominos d'un joueur.
+
+\section{Placement d'un polyomino}
+
+Pour un plateau donné il prend en compte : une pièce, prise dans un certain sens, et une position (ligne, colonne). Dès lors un algorithme naïf pour vérifier le positionnement et de comparer le plateau et la pièce à sa position donnée. Il serait alors intéressant de chercher des mécanismes pour simplifier la complexité d'un tel algorithme.
+
+\section{Fin de partie}
+
+Pour un plateau donné il prend en compte : l’ensemble des pièces d’un joueur. Dès lors une manière naïve de procéder à la vérification d’un blocage est de vérifier que pour chaque pièce il n'y a plus de place libre.
+Pour le placement et le blocage, nous chercherons des méthodes plus efficaces de vérification. Concrètement des idées telles que le fait que si un domino ne peut être placé nul part, alors toute pièce plus grande ne peut pas l’être (pour des pièces de même taille il est donc nécessaire de prendre en compte la forme de celle-ci). Et nous pourrions également parcourir seule les zones libres du plateau, et ainsi plus la partie avancerai plus le temps de calcul diminuera.
+
+\section{Stratégie de la machine}
+
+Pour une facilité d'implémentation il sera choisit de faire une stratégie très naïve pour la machine, en fait celle-ci utilise très exactement le même algorithme que celui qui vérifie la fin de partie.
+Une telle stratégie n'est clairement pas intéressante pour le joueur comme le développeur. En revanche il est possible de développer une véritable stratégie se basant sur l'apprentissage. En enregistrant les parties précédemment jouées puis en attribuant aux coups un score il est possible pour la machine d'apprendre à jouer. Dès lors en théorie elle devrait s'améliorer au fur et à mesure des parties d'un joueur en s'inspirant des meilleurs coups déjà produit. De plus un tel processus permettrai de générer un niveau de difficulté personnalisé à chaque joueur humain, car en effet celui-ci donne un nom en début de partie, la difficulté serai alors adapté au niveau de stratégie du joueur.

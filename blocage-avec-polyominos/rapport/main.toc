@@ -1,0 +1,35 @@
+\babel@toc {french}{}\relax 
+\contentsline {chapter}{Remerciements}{3}{}%
+\contentsline {chapter}{Introduction}{6}{}%
+\contentsline {chapter}{\numberline {1}Analyse technique du sujet proposé}{7}{}%
+\contentsline {section}{\numberline {1.1}Présentation rapide}{7}{}%
+\contentsline {section}{\numberline {1.2}Définitions}{8}{}%
+\contentsline {chapter}{Organisation}{9}{}%
+\contentsline {section}{\numberline {1.3}Ressources humaines}{9}{}%
+\contentsline {subsection}{\numberline {1.3.1}Fréquence de travail}{9}{}%
+\contentsline {subsection}{\numberline {1.3.2}Communication pour le travail}{9}{}%
+\contentsline {section}{\numberline {1.4}Ressources logicielles}{10}{}%
+\contentsline {subsection}{\numberline {1.4.1}Pour le projet}{10}{}%
+\contentsline {subsection}{\numberline {1.4.2}Écriture du code}{10}{}%
+\contentsline {subsection}{\numberline {1.4.3}Écriture du rapport}{10}{}%
+\contentsline {chapter}{\numberline {2}Description des classes}{11}{}%
+\contentsline {section}{\numberline {2.1}Main}{11}{}%
+\contentsline {section}{\numberline {2.2}Jeu}{11}{}%
+\contentsline {section}{\numberline {2.3}Scene}{11}{}%
+\contentsline {section}{\numberline {2.4}Menu}{11}{}%
+\contentsline {section}{\numberline {2.5}Niveau}{11}{}%
+\contentsline {section}{\numberline {2.6}Plateau}{12}{}%
+\contentsline {section}{\numberline {2.7}Cellule}{12}{}%
+\contentsline {section}{\numberline {2.8}Joueur}{12}{}%
+\contentsline {section}{\numberline {2.9}Humain}{12}{}%
+\contentsline {section}{\numberline {2.10}Machine}{12}{}%
+\contentsline {section}{\numberline {2.11}Polyomino}{13}{}%
+\contentsline {section}{\numberline {2.12}Domino, Triomino, Tetromino}{13}{}%
+\contentsline {section}{\numberline {2.13}Saisies}{13}{}%
+\contentsline {chapter}{\numberline {3}Fonctionnalités implémentées}{14}{}%
+\contentsline {section}{\numberline {3.1}Initialisation}{14}{}%
+\contentsline {section}{\numberline {3.2}Visuels}{14}{}%
+\contentsline {section}{\numberline {3.3}Placement d'un polyomino}{14}{}%
+\contentsline {section}{\numberline {3.4}Fin de partie}{15}{}%
+\contentsline {section}{\numberline {3.5}Stratégie de la machine}{15}{}%
+\contentsline {chapter}{Conclusion}{16}{}%

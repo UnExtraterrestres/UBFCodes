@@ -1,0 +1,43 @@
+\documentclass{report}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{color}
+\usepackage[french]{babel}
+\usepackage{titlesec}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{Willfrid Foucon}
+\fancyhead[R]{22205973}
+\fancyfoot[L]{Mai 2023}
+\fancyfoot[C]{}
+\fancyfoot[R]{\thepage}
+
+\titleformat{\chapter}[display]
+  {\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter}{20pt}{\Huge\thispagestyle{fancy}}
+
+
+\begin{document}
+
+	\include{page_de_garde.tex}
+	
+	\include{dedicaces.tex}
+	
+	\include{remerciements.tex}
+	
+	\newpage
+	\tableofcontents
+	
+	\include{introduction.tex}
+	
+	\include{analyse_technique.tex}
+	
+	\include{organisation.tex}
+	
+	\include{description_des_classes.tex}
+	
+	\include{fonctions_implementees.tex}
+	
+	\include{conclusion.tex}
+
+\end{document}

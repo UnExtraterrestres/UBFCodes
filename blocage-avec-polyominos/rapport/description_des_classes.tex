@@ -1,0 +1,54 @@
+\chapter{Description des classes}
+
+\section{Main}
+
+La classe Main contient la méthode principale qui lance l'exécution du jeu.
+
+\section{Jeu}
+
+La classe Jeu représente le jeu lui-même et gère des scènes, et l'arrêt du programme.
+
+\section{Scene}
+
+La classe Scene est simplement représentative des différentes scènes du jeu, le Menu et le Niveau en lui-même.
+
+\section{Menu}
+
+La classe Menu hérite de Scene, gère l'affichage et la gestion des menus du jeu, tels que le menu principal et le menu des options. Avant de lancer une nouvelle partie (Niveau).
+
+\section{Niveau}
+
+La classe Niveau hérite de Scene, elle représente la scène du jeu en lui même, c'est la qu'on va demander la saisie tour à tour des polyominos.
+
+\section{Plateau}
+
+La classe Plateau représente le plateau de jeu, qui est une grille de cellules où les pièces sont placées.
+
+\section{Cellule}
+
+La classe Cellule représente une cellule individuelle sur le plateau, pouvant contenir une pièce, avec un motif donné.
+
+\section{Joueur}
+
+La classe Joueur est une classe abstraite qui représente un joueur dans le jeu, avec des méthodes pour placer des pièces et prendre des décisions.
+
+\section{Humain}
+
+La classe Humain hérite de Joueur qui implémente les actions d'un joueur humain. La différence avec la machine est principalement dans le placement d'un polyomino qui se fait par saisie pour un humain.
+
+\section{Machine}
+
+La classe Machine hérite de Joueur qui implémente les actions d'un joueur contrôlé par l'ordinateur, avec une stratégie de jeu spécifique. (Une partie y sera dédiée plus loin dans le rapport.)
+
+\newpage
+\section{Polyomino}
+
+La classe Polyomino est une classe abstraite qui représente un polyomino, avec des méthodes pour le positionner sur le plateau ou le tourner par exemples.
+
+\section{Domino, Triomino, Tetromino}
+
+Les classes Domino, Triomino et Tetromino héritent de Polyomino qui représentent différents types de polyominos, respectivement composés de 2, 3 et 4 carrés.
+
+\section{Saisies}
+
+La classe Saisies gère les saisies utilisateur, telles que la saisie des coordonnées pour placer une pièce.
